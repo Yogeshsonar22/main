@@ -1,0 +1,45 @@
+//checked Exception ->IOException, SQLException, ClassNotFoundException, FileNotFoundException
+import java.io.*;
+import java.sql.*;
+class Main {
+    public static void main(String[] args) {
+        //check-> FileNotFoundException, SQLException, IOException 
+        System.out.println("--------------FileNotFoundException----------");
+        try {
+            FileInputStream fis = new FileInputStream("abc.txt"); // checked exception
+            System.out.println("File opened successfully");
+        }
+        catch (FileNotFoundException e) {
+            System.out.println("Error: File does not exist -> " + e.getMessage());
+        }
+         System.out.println();
+          System.out.println("--------------IOException---------------");
+  try {
+            BufferedReader br = new BufferedReader(new FileReader("data.txt"));
+            String line = br.readLine();   // may throw IOException
+            System.out.println("Line: " + line);
+            br.close();
+        }
+        catch (IOException e) {
+            System.out.println("Error while reading file: " + e.getMessage());
+        }
+         System.out.println();
+          System.out.println("--------------ClassNotFoundException--------------");
+          try {
+            Class.forName("com.example.Test");  // checked exception
+        }
+        catch (ClassNotFoundException e) {
+            System.out.println("Class not found: " + e.getMessage());
+        }
+         System.out.println(); System.out.println("-------------SQLException---------------");
+         //add import java.sql.*;
+         
+           try {
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "pass");
+        }
+        catch (SQLException e) {
+            System.out.println("Database error: " + e.getMessage());
+        }
+
+    }
+}
