@@ -1,0 +1,24 @@
+//Multi-thread using the thread class
+
+class mythread extends Thread{
+    public void run(){
+        System.out.println("Thread running "+ Thread.currentThread().getName());
+    }
+}
+class Main{
+    public static void main(String[] args){
+        mythread th = new mythread();
+         mythread th1 = new mythread();
+          mythread th2 = new mythread();
+        th.start();
+        th1.start();
+        th2.start();
+        
+    }
+}
+
+/* Your Output
+Thread running Thread-0
+Thread running Thread-1
+Thread running Thread-2
+*/
