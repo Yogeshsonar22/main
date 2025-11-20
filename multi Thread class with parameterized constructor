@@ -1,0 +1,33 @@
+//Thread class with parameterized constructor
+class mythread extends Thread{
+    String name;
+    mythread(String name){
+        this.name=name;
+    }
+    public void run(){
+        System.out.println("Thread running "+ name);
+    }
+}
+class Main{
+    public static void main(String[] args){
+        mythread th = new mythread("Thread--1");
+         mythread th1 = new mythread("Thread--2");
+          mythread th2 = new mythread("Thread--3");
+        th.start();
+        th1.start();
+        th2.start();
+        
+    }
+}
+
+/*
+Your Output
+Thread running Thread--1
+Thread running Thread--3
+Thread running Thread--2
+*/
+
+
+
+
+
