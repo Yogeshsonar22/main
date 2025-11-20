@@ -1,0 +1,42 @@
+
+        //uncheck-> NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException, IllegalArgumentException example
+  
+class Main {
+    public static void main(String[] args) {
+       
+ //Uncheck Exception Code
+  
+  
+  System.out.println("----------Nullpointer exception------------");
+  try{
+  String s= null;
+  System.out.println(s.length());
+  }
+  catch(Exception e){
+      System.out.println("Exception: "+e.getMessage());
+  }
+  
+  System.out.println();
+   System.out.println("----------ArithmeticException exception------------");
+   int value =0;
+   try{
+   System.out.println(10/value);
+   }catch( ArithmeticException e){
+       System.out.println("Exception: "+e.getMessage());
+   }
+   System.out.println();System.out.println("----------ArrayIndexOutOfBpoundsException-----------");
+   int arr[]={1,2,3,4,6};
+   try{
+   System.out.println(arr[7]);
+    }catch(Exception e){
+        System.out.println(e.getMessage());
+    }
+        System.out.println();System.out.println("----------IllegleArgumentException------------");
+      try {
+    Thread.sleep(-100);  }
+catch (Exception e) {
+    System.out.println("Error: " + e.getMessage());
+}
+
+    }
+}
