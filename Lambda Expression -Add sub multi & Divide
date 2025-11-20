@@ -1,0 +1,37 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+// add substract divide and multiply sing lambada expression
+interface Lambda{
+    int Operation(int a, int b);
+}
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Lambda add =(a,b)-> a+b;
+		Lambda sub =(a,b) -> a-b;
+		Lambda mul = (a,b) -> a*b;
+		Lambda div =(a,b)-> a/b;
+		
+		System.out.println("Add: "+ add.Operation(15,3));
+			System.out.println("SUB: "+ sub.Operation(15,3));
+				System.out.println("Mul: "+ mul.Operation(15,3));
+					System.out.println("div: "+ div.Operation(15,3));
+					
+		
+		
+
+	}
+}
+
+/*
+Your Output
+Add: 18
+SUB: 12
+Mul: 45
+div: 5
+
+*/
