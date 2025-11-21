@@ -1,0 +1,40 @@
+import java.util.*;
+
+class Employee {
+    public String name;
+    public int age;
+    public long salary;
+
+    public Employee(String name, int age, long salary) {
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
+
+//toString is important when an Object is passed by the constructor: to give a value, not a location address
+    @Override
+    public String toString() {
+        return "name: " + name + ", age: " + age + ", salary: " + salary + "\n";
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        List<Employee> list = Arrays.asList(
+            new Employee("Yogesh", 26, 26000),
+            new Employee("Raj", 27, 27000),
+            new Employee("Pratik", 28, 28000)
+        );
+
+        //  Find highest salary employee
+        Employee highestSalaryEmp = list.stream()
+            .max((e1, e2) -> Long.compare(e1.salary, e2.salary))
+            .orElse(null);
+
+        System.out.println("Highest Salary Employee:");
+        System.out.println(highestSalaryEmp);
+    }
+}
+//Output:
+//Highest Salary Employee:
+//name: Pratik, age: 28, salary: 28000
