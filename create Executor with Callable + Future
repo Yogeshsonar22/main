@@ -1,0 +1,24 @@
+
+//put submit task into the Callable block and opass that variable into submit and take sumit outout in Future and future prvide operation on return value
+//if using Callable + Future use throws Exception.
+
+
+import java.util.concurrent.*;
+
+class Main{
+    public static void main(String[] srgd) throws Exception{
+       // ExecutorService service = Executors.newSingleThreadExecutor();
+        //ExecutorService service =Executors.newCachedThreadPool();
+        //ExecutorService service =Executors.newFixedThreadPool(4);
+        ScheduledExecutorService service = Executors.newScheduledThreadPool(1);
+           
+           Callable <Integer> result =()->{ return 10*5;
+               
+           };
+           
+            // Future <Integer> future =service.submit(result);
+        System.out.println("Future: "+ future.get());
+        service.shutdown();
+        
+    }
+}
