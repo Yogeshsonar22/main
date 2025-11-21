@@ -1,0 +1,23 @@
+//Diifrent way of creating Executor Thread
+//newFixedThreadPool
+//cachesThradPool
+//SingleExecutorService
+//scheduleThradPool
+import java.util.concurrent.*;
+
+
+class Main{
+    public static void main(String[] srgs){
+       // ExecutorService ex = Executors.newSingleThreadExecutor();
+        //ExecutorService ex = Executors.newFixedThreadPool(5);
+       // ExecutorService ex = Executors.newCachedThreadPool();
+        ScheduledExecutorService ex = Executors.newScheduledThreadPool(3);
+
+
+        ex.submit(()-> System.out.println("Executor is Running"));
+        
+        ex.shutdown();
+        
+        
+    }
+}
