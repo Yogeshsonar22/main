@@ -1,0 +1,35 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class myThread extends Thread{
+     public void run(){
+      System.out.println(Thread.currentThread().getName());
+     }
+}
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	System.out.println("Print thread name 5 times using Thread.currentThread().getName()");
+	    myThread th =new myThread();
+	    myThread th1 =new myThread();
+	    myThread th2 =new myThread();
+	    myThread th3 =new myThread();
+	    myThread th4 =new myThread();
+	    th.start();
+	      th1.start();
+	        th2.start();
+	          th3.start();
+	            th4.start();
+
+
+	}
+}
+// Print thread name 5 times 
+// Thread-0
+// Thread-1
+// Thread-2
+// Thread-3
+// Thread-4
