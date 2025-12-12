@@ -1,0 +1,69 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+
+
+class MyThread extends Thread{
+    String str;
+   public MyThread(String str){
+        this.str=str;
+    }
+    
+    public void run(){
+        if (str.equals("Thread1"))
+        for (int i =1;i<=5;i++){
+            System.out.println("Thread1 " + i);
+            
+        }
+        
+        else{
+              for (int i =6;i<=10;i++){
+            System.out.println("Thread2 "+i);
+            
+        }
+            
+        }
+        
+    }
+}
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	    System.out.println("create two thread which print value A & B Thread");
+	    
+	    MyThread A = new MyThread("Thread1");
+	    MyThread B = new MyThread("Thread2");
+	    A.start();
+	    B.start();
+	    
+	}
+}
+*/1st time output
+create two thread which print value A & B Thread
+Thread1 1
+Thread1 2
+Thread1 3
+Thread1 4
+Thread1 5
+Thread2 6
+Thread2 7
+Thread2 8
+Thread2 9
+Thread2 10
+/*
+*/
+2nd time output
+create two thread which print value A & B Thread
+Thread2 6
+Thread2 7
+Thread2 8
+Thread2 9
+Thread2 10
+Thread1 1
+Thread1 2
+Thread1 3
+Thread1 4
+Thread1 5
+/*
